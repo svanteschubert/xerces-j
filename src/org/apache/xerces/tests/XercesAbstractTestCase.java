@@ -73,7 +73,8 @@ public class XercesAbstractTestCase extends TestCase implements ErrorHandler {
 
 	protected void setUp() throws Exception {
 		System.setProperty("javax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema/v1.1", SCHEMA_11_FACTORY);
-		fDataDir = System.getProperty("org.apache.xerces.tests.dataDir");
+		// fDataDir = System.getProperty("org.apache.xerces.tests.dataDir");
+        fDataDir = "E:\\dev\\tausch\\xml\\xsd-debug\\xml-schema-1.1-tests\\data";
 		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_11_LANGUAGE);
 		fSchemaFactory.setFeature(SCHEMA_FULL_CHECKING_FEATURE_ID, true);
 		fSchemaFactory.setFeature(CTA_FULL_XPATH, true);
