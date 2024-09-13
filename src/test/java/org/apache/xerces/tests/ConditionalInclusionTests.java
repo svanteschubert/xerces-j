@@ -73,7 +73,7 @@ public class ConditionalInclusionTests extends XercesAbstractTestCase {
 	
 	public void testVersionControl3() {
 		// run validation in XSD 1.0 mode
-		fSchemaFactory = SchemaFactory.newInstance(DEFAULT_SCHEMA_LANGUAGE);		
+		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_10_LANGUAGE);		
 		String xmlfile = fDataDir+"/version-control/test37.xml";
 		String schemapath = fDataDir+"/version-control/test37.xsd";		
 		try {
@@ -108,7 +108,7 @@ public class ConditionalInclusionTests extends XercesAbstractTestCase {
 	
 	public void testVersionControl5() {
 		// run validation in XSD 1.0 mode
-		fSchemaFactory = SchemaFactory.newInstance(DEFAULT_SCHEMA_LANGUAGE);		
+		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_10_LANGUAGE);		
 		String xmlfile = fDataDir+"/version-control/test38.xml";
 		String schemapath = fDataDir+"/version-control/test38.xsd";		
 		try {
@@ -143,7 +143,7 @@ public class ConditionalInclusionTests extends XercesAbstractTestCase {
 	
 	public void testVersionControl7() {
 		// run validation in XSD 1.0 mode
-		fSchemaFactory = SchemaFactory.newInstance(DEFAULT_SCHEMA_LANGUAGE);		
+		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_10_LANGUAGE);		
 		String xmlfile = fDataDir+"/version-control/test40.xml";
 		String schemapath = fDataDir+"/version-control/test39.xsd";		
 		try {
@@ -265,7 +265,7 @@ public class ConditionalInclusionTests extends XercesAbstractTestCase {
 			// test a) run validation in XSD 1.0 mode
 			// instance validation fails.
 			fSchemaFactory.setFeature(SCHEMA_FULL_CHECKING_FEATURE_ID, true);
-			fSchemaFactory = SchemaFactory.newInstance(DEFAULT_SCHEMA_LANGUAGE);
+			fSchemaFactory = SchemaFactory.newInstance(SCHEMA_10_LANGUAGE);
 		    Schema s = fSchemaFactory.newSchema(new StreamSource(schemapath));
             Validator v = s.newValidator();
 		    v.setErrorHandler(this);

@@ -162,7 +162,7 @@ public class JiraBugsTests extends XercesAbstractTestCase {
 	
 	public void testJira_1584_3() {
 		// run validation in XSD 1.0 mode
-		fSchemaFactory = SchemaFactory.newInstance(DEFAULT_SCHEMA_LANGUAGE);
+		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_10_LANGUAGE);
 		String xmlfile = fDataDir+"/jira_bugs/3.xml";	
 		String schemapath = fDataDir+"/jira_bugs/3.xsd";	
 		try {
@@ -186,7 +186,7 @@ public class JiraBugsTests extends XercesAbstractTestCase {
 	
 	public void testJira_1584_4() {
 		// run validation in XSD 1.0 mode
-		fSchemaFactory = SchemaFactory.newInstance(DEFAULT_SCHEMA_LANGUAGE);
+		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_10_LANGUAGE);
 		String xmlfile = fDataDir+"/jira_bugs/3_1.xml";	
 		String schemapath = fDataDir+"/jira_bugs/3_1.xsd";	
 		try {
@@ -234,7 +234,7 @@ public class JiraBugsTests extends XercesAbstractTestCase {
 	
 	public void testJira_1591_2() {
 		// run validation in XSD 1.0 mode
-		fSchemaFactory = SchemaFactory.newInstance(DEFAULT_SCHEMA_LANGUAGE);
+		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_10_LANGUAGE);
 		String xmlfile = fDataDir+"/jira_bugs/ag.xml";	
 		String schemapath = fDataDir+"/jira_bugs/ag3.xsd";	
 		try {
@@ -279,7 +279,7 @@ public class JiraBugsTests extends XercesAbstractTestCase {
 	
 	public void testJira_1591_4() {
 		// run validation in XSD 1.0 mode
-		fSchemaFactory = SchemaFactory.newInstance(DEFAULT_SCHEMA_LANGUAGE);
+		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_10_LANGUAGE);
 		String xmlfile = fDataDir+"/jira_bugs/gr.xml";	
 		String schemapath = fDataDir+"/jira_bugs/gr3.xsd";	
 		try {
@@ -507,7 +507,7 @@ public class JiraBugsTests extends XercesAbstractTestCase {
 	
 	public void testJira_1698_1() {
 		// process the schema document in XSD 1.0 mode
-		fSchemaFactory = SchemaFactory.newInstance(DEFAULT_SCHEMA_LANGUAGE);
+		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_10_LANGUAGE);
 		String schemapath = fDataDir+"/jira_bugs/1698_1.xsd";	
 		try {
 			fSchemaFactory.setFeature(SCHEMA_FULL_CHECKING_FEATURE_ID, true);

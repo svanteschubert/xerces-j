@@ -61,7 +61,8 @@ public class XercesAbstractTestCase extends TestCase implements ErrorHandler {
 	
 	protected boolean checkOnlyWarnings = false; 
 	
-	protected static final String DEFAULT_SCHEMA_LANGUAGE = XMLConstants.W3C_XML_SCHEMA_NS_URI;
+	protected static final String SCHEMA_10_LANGUAGE = XMLConstants.W3C_XML_SCHEMA_NS_URI;
+    protected static final String SCHEMA_10_FACTORY = "org.apache.xerces.jaxp.validation.XMLSchemaFactory";
 	protected static final String SCHEMA_11_LANGUAGE = "http://www.w3.org/2001/XMLSchema/v1.1";
 	protected static final String SCHEMA_11_FACTORY = "org.apache.xerces.jaxp.validation.XMLSchema11Factory";
 	protected static final String SCHEMA_FULL_CHECKING_FEATURE_ID = "http://apache.org/xml/features/validation/schema-full-checking";
@@ -72,7 +73,8 @@ public class XercesAbstractTestCase extends TestCase implements ErrorHandler {
 	}
 
 	protected void setUp() throws Exception {
-		System.setProperty("javax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema/v1.1", SCHEMA_11_FACTORY);
+		System.setProperty("javax.xml.validation.SchemaFactory:" + SCHEMA_11_LANGUAGE, SCHEMA_11_FACTORY);
+        System.setProperty("javax.xml.validation.SchemaFactory:" + SCHEMA_10_LANGUAGE, SCHEMA_10_FACTORY);
 		fDataDir = System.getProperty("org.apache.xerces.tests.dataDir");
 		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_11_LANGUAGE);
 		fSchemaFactory.setFeature(SCHEMA_FULL_CHECKING_FEATURE_ID, true);

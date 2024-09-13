@@ -39,7 +39,7 @@ public class OverrideTests extends XercesAbstractTestCase {
 	
 	public void testXSOverride1() {
 		// run validation in XSD 1.0 mode
-		fSchemaFactory = SchemaFactory.newInstance(DEFAULT_SCHEMA_LANGUAGE);		
+		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_10_LANGUAGE);		
 		String xmlfile = fDataDir+"/override/test1.xml";
 		String schemapath = fDataDir+"/override/test1.xsd";		
 		try {

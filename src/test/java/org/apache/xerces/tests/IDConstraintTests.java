@@ -300,7 +300,7 @@ public class IDConstraintTests extends XercesAbstractTestCase {
 	
 	public void testIDConstraint15() {
 		// run validation in XSD 1.0 mode
-		fSchemaFactory = SchemaFactory.newInstance(DEFAULT_SCHEMA_LANGUAGE);
+		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_10_LANGUAGE);
 		String xmlfile = fDataDir+"/idconstraints/jira_1585.xml";
 		String schemapath = fDataDir+"/idconstraints/jira_1585.xsd";	
 		try {
@@ -329,7 +329,7 @@ public class IDConstraintTests extends XercesAbstractTestCase {
 	
 	public void testIDConstraint16() {
 		// run validation in XSD 1.0 mode
-		fSchemaFactory = SchemaFactory.newInstance(DEFAULT_SCHEMA_LANGUAGE);
+		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_10_LANGUAGE);
 		String xmlfile = fDataDir+"/idconstraints/jira_1594.xml";
 		String schemapath = fDataDir+"/idconstraints/jira_1594.xsd";
 		try {
@@ -368,7 +368,7 @@ public class IDConstraintTests extends XercesAbstractTestCase {
 	
 	public void testIDConstraint17() {
 		// run validation in XSD 1.0 mode
-		fSchemaFactory = SchemaFactory.newInstance(DEFAULT_SCHEMA_LANGUAGE);
+		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_10_LANGUAGE);
 		String xmlfile = fDataDir+"/idconstraints/idc_1_valid_1.xml";
 		String schemapath = fDataDir+"/idconstraints/idc_1.xsd";	
 		try {
@@ -397,7 +397,7 @@ public class IDConstraintTests extends XercesAbstractTestCase {
 	
 	public void testIDConstraint18() {
 		// run validation in XSD 1.0 mode
-		fSchemaFactory = SchemaFactory.newInstance(DEFAULT_SCHEMA_LANGUAGE);
+		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_10_LANGUAGE);
 		String xmlfile = fDataDir+"/idconstraints/idc_1_invalid_1.xml";
 		String schemapath = fDataDir+"/idconstraints/idc_1.xsd";	
 		try {
@@ -448,7 +448,7 @@ public class IDConstraintTests extends XercesAbstractTestCase {
 	
 	public void testIDConstraint19() {
 		// run validation in XSD 1.0 mode
-		fSchemaFactory = SchemaFactory.newInstance(DEFAULT_SCHEMA_LANGUAGE);
+		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_10_LANGUAGE);
 		String xmlfile = fDataDir+"/idconstraints/idc_1_invalid_2.xml";
 		String schemapath = fDataDir+"/idconstraints/idc_1.xsd";	
 		try {
@@ -499,7 +499,7 @@ public class IDConstraintTests extends XercesAbstractTestCase {
 	
 	public void testIDConstraint20() {
 		// run validation in XSD 1.0 mode
-		fSchemaFactory = SchemaFactory.newInstance(DEFAULT_SCHEMA_LANGUAGE);
+		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_10_LANGUAGE);
 		String xmlfile = fDataDir+"/idconstraints/idc_1_invalid_3.xml";
 		String schemapath = fDataDir+"/idconstraints/idc_1.xsd";	
 		try {
@@ -556,7 +556,7 @@ public class IDConstraintTests extends XercesAbstractTestCase {
 	
 	public void testIDConstraint21() {
 		// run validation in XSD 1.0 mode
-		fSchemaFactory = SchemaFactory.newInstance(DEFAULT_SCHEMA_LANGUAGE);
+		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_10_LANGUAGE);
 		String xmlfile = fDataDir+"/idconstraints/idc_2_valid_1.xml";
 		String schemapath = fDataDir+"/idconstraints/idc_2.xsd";	
 		try {
@@ -585,7 +585,7 @@ public class IDConstraintTests extends XercesAbstractTestCase {
 	
 	public void testIDConstraint22() {
 		// run validation in XSD 1.0 mode
-		fSchemaFactory = SchemaFactory.newInstance(DEFAULT_SCHEMA_LANGUAGE);
+		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_10_LANGUAGE);
 		String xmlfile = fDataDir+"/idconstraints/idc_2_valid_2.xml";
 		String schemapath = fDataDir+"/idconstraints/idc_2.xsd";	
 		try {
@@ -614,7 +614,7 @@ public class IDConstraintTests extends XercesAbstractTestCase {
 	
 	public void testIDConstraint23() {
 		// run validation in XSD 1.0 mode
-		fSchemaFactory = SchemaFactory.newInstance(DEFAULT_SCHEMA_LANGUAGE);
+		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_10_LANGUAGE);
 		String xmlfile = fDataDir+"/idconstraints/idc_2_invalid_1.xml";
 		String schemapath = fDataDir+"/idconstraints/idc_2.xsd";	
 		try {
@@ -653,7 +653,7 @@ public class IDConstraintTests extends XercesAbstractTestCase {
 	
 	public void testIDConstraint24() {
 		// run validation in XSD 1.0 mode
-		fSchemaFactory = SchemaFactory.newInstance(DEFAULT_SCHEMA_LANGUAGE);
+		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_10_LANGUAGE);
 		String xmlfile = fDataDir+"/idconstraints/idc_2_invalid_2.xml";
 		String schemapath = fDataDir+"/idconstraints/idc_2.xsd";	
 		try {
@@ -692,7 +692,7 @@ public class IDConstraintTests extends XercesAbstractTestCase {
 	
 	public void testIDConstraint25() {
 		// run validation in XSD 1.0 mode
-		fSchemaFactory = SchemaFactory.newInstance(DEFAULT_SCHEMA_LANGUAGE);
+		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_10_LANGUAGE);
 		String xmlfile = fDataDir+"/idconstraints/idc_3_valid_1.xml";
 		String schemapath = fDataDir+"/idconstraints/idc_3.xsd";	
 		try {
@@ -721,7 +721,7 @@ public class IDConstraintTests extends XercesAbstractTestCase {
 	
 	public void testIDConstraint26() {
 		// run validation in XSD 1.0 mode
-		fSchemaFactory = SchemaFactory.newInstance(DEFAULT_SCHEMA_LANGUAGE);
+		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_10_LANGUAGE);
 		String xmlfile = fDataDir+"/idconstraints/idc_3_invalid_1.xml";
 		String schemapath = fDataDir+"/idconstraints/idc_3.xsd";	
 		try {
@@ -760,7 +760,7 @@ public class IDConstraintTests extends XercesAbstractTestCase {
 	
 	public void testIDConstraint27() {
 		// run validation in XSD 1.0 mode
-		fSchemaFactory = SchemaFactory.newInstance(DEFAULT_SCHEMA_LANGUAGE);
+		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_10_LANGUAGE);
 		String xmlfile = fDataDir+"/idconstraints/idc_3_invalid_2.xml";
 		String schemapath = fDataDir+"/idconstraints/idc_3.xsd";	
 		try {
@@ -799,7 +799,7 @@ public class IDConstraintTests extends XercesAbstractTestCase {
 	
 	public void testIDConstraint28() {
 		// run validation in XSD 1.0 mode
-		fSchemaFactory = SchemaFactory.newInstance(DEFAULT_SCHEMA_LANGUAGE);
+		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_10_LANGUAGE);
 		String xmlfile = fDataDir+"/idconstraints/idc_4_valid_1.xml";
 		String schemapath = fDataDir+"/idconstraints/idc_4.xsd";	
 		try {
@@ -828,7 +828,7 @@ public class IDConstraintTests extends XercesAbstractTestCase {
 	
 	public void testIDConstraint29() {
 		// run validation in XSD 1.0 mode
-		fSchemaFactory = SchemaFactory.newInstance(DEFAULT_SCHEMA_LANGUAGE);
+		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_10_LANGUAGE);
 		String xmlfile = fDataDir+"/idconstraints/idc_4_valid_2.xml";
 		String schemapath = fDataDir+"/idconstraints/idc_4.xsd";	
 		try {
@@ -857,7 +857,7 @@ public class IDConstraintTests extends XercesAbstractTestCase {
 	
 	public void testIDConstraint30() {
 		// run validation in XSD 1.0 mode
-		fSchemaFactory = SchemaFactory.newInstance(DEFAULT_SCHEMA_LANGUAGE);
+		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_10_LANGUAGE);
 		String xmlfile = fDataDir+"/idconstraints/idc_4_invalid_1.xml";
 		String schemapath = fDataDir+"/idconstraints/idc_4.xsd";	
 		try {
@@ -896,7 +896,7 @@ public class IDConstraintTests extends XercesAbstractTestCase {
 	
 	public void testIDConstraint31() {
 		// run validation in XSD 1.0 mode
-		fSchemaFactory = SchemaFactory.newInstance(DEFAULT_SCHEMA_LANGUAGE);
+		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_10_LANGUAGE);
 		String xmlfile = fDataDir+"/idconstraints/idc_4_invalid_2.xml";
 		String schemapath = fDataDir+"/idconstraints/idc_4.xsd";	
 		try {
@@ -935,7 +935,7 @@ public class IDConstraintTests extends XercesAbstractTestCase {
 	
 	public void testIDConstraint32() {
 		// run validation in XSD 1.0 mode
-		fSchemaFactory = SchemaFactory.newInstance(DEFAULT_SCHEMA_LANGUAGE);
+		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_10_LANGUAGE);
 		String xmlfile = fDataDir+"/idconstraints/idc_5_valid_1.xml";
 		String schemapath = fDataDir+"/idconstraints/idc_5.xsd";	
 		try {
@@ -964,7 +964,7 @@ public class IDConstraintTests extends XercesAbstractTestCase {
 	
 	public void testIDConstraint33() {
 		// run validation in XSD 1.0 mode
-		fSchemaFactory = SchemaFactory.newInstance(DEFAULT_SCHEMA_LANGUAGE);
+		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_10_LANGUAGE);
 		String xmlfile = fDataDir+"/idconstraints/idc_5_invalid_1.xml";
 		String schemapath = fDataDir+"/idconstraints/idc_5.xsd";	
 		try {
@@ -1003,7 +1003,7 @@ public class IDConstraintTests extends XercesAbstractTestCase {
 	
 	public void testIDConstraint34() {
 		// run validation in XSD 1.0 mode
-		fSchemaFactory = SchemaFactory.newInstance(DEFAULT_SCHEMA_LANGUAGE);
+		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_10_LANGUAGE);
 		String xmlfile = fDataDir+"/idconstraints/idc_5_invalid_2.xml";
 		String schemapath = fDataDir+"/idconstraints/idc_5.xsd";	
 		try {
@@ -1042,7 +1042,7 @@ public class IDConstraintTests extends XercesAbstractTestCase {
 	
 	public void testIDConstraint35() {
 		// run validation in XSD 1.0 mode
-		fSchemaFactory = SchemaFactory.newInstance(DEFAULT_SCHEMA_LANGUAGE);
+		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_10_LANGUAGE);
 		String xmlfile = fDataDir+"/idconstraints/idc_ref_attr_valid_1.xml";
 		String schemapath = fDataDir+"/idconstraints/idc_ref_attr_1.xsd";	
 		try {
@@ -1098,7 +1098,7 @@ public class IDConstraintTests extends XercesAbstractTestCase {
 	
 	public void testIDConstraint38() {
 		// run validation in XSD 1.0 mode
-		fSchemaFactory = SchemaFactory.newInstance(DEFAULT_SCHEMA_LANGUAGE);
+		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_10_LANGUAGE);
 		String xmlfile = fDataDir+"/idconstraints/idc_6_valid_1.xml";
 		String schemapath = fDataDir+"/idconstraints/idc_6.xsd";	
 		try {
@@ -1127,7 +1127,7 @@ public class IDConstraintTests extends XercesAbstractTestCase {
 	
 	public void testIDConstraint39() {
 		// run validation in XSD 1.0 mode
-		fSchemaFactory = SchemaFactory.newInstance(DEFAULT_SCHEMA_LANGUAGE);
+		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_10_LANGUAGE);
 		String xmlfile = fDataDir+"/idconstraints/idc_6_invalid_1.xml";
 		String schemapath = fDataDir+"/idconstraints/idc_6.xsd";	
 		try {
@@ -1166,7 +1166,7 @@ public class IDConstraintTests extends XercesAbstractTestCase {
 	
 	public void testIDConstraint40() {
 		// run validation in XSD 1.0 mode
-		fSchemaFactory = SchemaFactory.newInstance(DEFAULT_SCHEMA_LANGUAGE);
+		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_10_LANGUAGE);
 		String xmlfile = fDataDir+"/idconstraints/valid_1_1515.xml";
 		String schemapath = fDataDir+"/idconstraints/jira_1515.xsd";	
 		try {
@@ -1195,7 +1195,7 @@ public class IDConstraintTests extends XercesAbstractTestCase {
 	
 	public void testIDConstraint41() {
 		// run validation in XSD 1.0 mode
-		fSchemaFactory = SchemaFactory.newInstance(DEFAULT_SCHEMA_LANGUAGE);
+		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_10_LANGUAGE);
 		String xmlfile = fDataDir+"/idconstraints/valid_2_1515.xml";
 		String schemapath = fDataDir+"/idconstraints/jira_1515.xsd";	
 		try {
@@ -1224,7 +1224,7 @@ public class IDConstraintTests extends XercesAbstractTestCase {
 	
 	public void testIDConstraint42() {
 		// run validation in XSD 1.0 mode
-		fSchemaFactory = SchemaFactory.newInstance(DEFAULT_SCHEMA_LANGUAGE);
+		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_10_LANGUAGE);
 		String xmlfile = fDataDir+"/idconstraints/invalid_1_1515.xml";
 		String schemapath = fDataDir+"/idconstraints/jira_1515.xsd";	
 		try {
@@ -1263,7 +1263,7 @@ public class IDConstraintTests extends XercesAbstractTestCase {
 	
 	public void testIDConstraint43() {
 		// run validation in XSD 1.0 mode
-		fSchemaFactory = SchemaFactory.newInstance(DEFAULT_SCHEMA_LANGUAGE);
+		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_10_LANGUAGE);
 		String xmlfile = fDataDir+"/idconstraints/jira_1714_valid.xml";
 		String schemapath = fDataDir+"/idconstraints/jira_1714.xsd";	
 		try {
@@ -1292,7 +1292,7 @@ public class IDConstraintTests extends XercesAbstractTestCase {
 	
 	public void testIDConstraint44() {
 		// run validation in XSD 1.0 mode
-		fSchemaFactory = SchemaFactory.newInstance(DEFAULT_SCHEMA_LANGUAGE);
+		fSchemaFactory = SchemaFactory.newInstance(SCHEMA_10_LANGUAGE);
 		String xmlfile = fDataDir+"/idconstraints/jira_1714_invalid.xml";
 		String schemapath = fDataDir+"/idconstraints/jira_1714.xsd";	
 		try {
