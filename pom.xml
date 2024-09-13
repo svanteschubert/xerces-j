@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     Licensed to the Apache Software Foundation (ASF) under one
+     or more contributor license agreements.  See the NOTICE file
+     distributed with this work for additional information
+     regarding copyright ownership.  The ASF licenses this file
+     to you under the Apache License, Version 2.0 (the
+     "License"); you may not use this file except in compliance
+     with the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing,
+     software distributed under the License is distributed on an
+     "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+     specific language governing permissions and limitations
+     under the License.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    
+    <parent>
+        <groupId>org.apache</groupId>
+        <artifactId>apache</artifactId>
+        <version>31</version>
+        <relativePath/>
+    </parent>
+    
+    <name>Xerces2-j</name>
+    <groupId>xerces</groupId>
+    <artifactId>xercesImpl</artifactId>
+    <version>2.12.3-SNAPSHOT</version>
+
+    <properties>
+        <javadoc.bottom>Copyright © {inceptionYear}–2024 Apache Software Foundation; Copyright © 2018–{currentYear} {organizationName}. All rights reserved.</javadoc.bottom>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- explicitly setting JDK version for compiler source & target -->
+        <jdk.version>8</jdk.version>
+        <user.language>en</user.language>
+        <user.region>US</user.region>
+        <!-- all three JDK versions should not differ -->
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <!-- ANT driven release bundle creation: 3 ZIPs for the complete Toolkit for binaries, documentation and sources -->
+        <release.dir>${basedir}/target/release</release.dir>
+        <release.dir.bin>${release.dir}/${project.version}/binaries</release.dir.bin>
+        <release.dir.doc>${release.dir}/${project.version}/docs</release.dir.doc>
+        <release.dir.src>${release.dir}/${project.version}/sources</release.dir.src>
+        <release.tmpdir>${basedir}/target/release-tmp</release.tmpdir>
+        <release.tmpdir.bin>${release.tmpdir}/${project.version}-bin</release.tmpdir.bin>
+        <release.tmpdir.doc>${release.tmpdir}/${project.version}-doc</release.tmpdir.doc>
+        <release.tmpdir.src>${release.tmpdir}/${project.version}-src</release.tmpdir.src>
+        <release.zip.bin>xerces2-j-${project.version}-bin.zip</release.zip.bin>
+        <release.zip.doc>xerces2-j-${project.version}-doc.zip</release.zip.doc>
+        <release.zip.src>xerces2-j-${project.version}-src.zip</release.zip.src>
+        <supported-xsd-version>1.1</supported-xsd-version>
+        <skipTests>false</skipTests>
+        <!-- to skip even compiling the tests is honored by Surefire, Failsafe and Compiler Plugin -->
+        <maven.test.skip>${skipTests}</maven.test.skip>
+        <maven.javadoc.skip>false</maven.javadoc.skip>
+        <maven.javadoc.failOnError>false</maven.javadoc.failOnError>
+        <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ss</maven.build.timestamp.format>
+    </properties>    
+    <!-- At root project level defining dependencies useable across all projects.
+         Making version management easy and consistent! -->
+         <!--
+    <dependencyManagement>-->
+        <dependencies>
+            <dependency>
+                <groupId>xml-apis</groupId>
+                <artifactId>xml-apis</artifactId>
+                <version>1.4.01</version>
+            </dependency>
+            <dependency>
+                <groupId>xml-resolver</groupId>
+                <artifactId>xml-resolver</artifactId>
+                <version>1.2</version>
+                <optional>true</optional>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse</groupId>
+                <artifactId>wst.xml.xpath2.processor</artifactId>
+                <version>1.2.1</version>
+                <scope>system</scope>
+                <systemPath>${project.basedir}/tools/org.eclipse.wst.xml.xpath2.processor_1.2.1.jar</systemPath>
+            </dependency>
+            <dependency>
+                <groupId>edu.princeton.cup</groupId>
+                <artifactId>java-cup</artifactId>
+                <version>10k</version>
+                <scope>system</scope>
+                <systemPath>${project.basedir}/tools/cupv10k-runtime.jar</systemPath>
+            </dependency>        
+            <!-- https://mvnrepository.com/artifact/junit/junit -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.13.2</version>
+                <scope>test</scope>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/edu.princeton.cup/java-cup 
+            <dependency>
+                <groupId>edu.princeton.cup</groupId>
+                <artifactId>java-cup</artifactId>
+                <version>10k</version>
+            </dependency>-->
+        </dependencies>
+        <!--
+    </dependencyManagement>
+    
+    <modules>
+        <module>sample</module>
+        <module>generator</module>
+        <module>xslt-runner</module>
+        <module>xerces</module>
+        <module>validator</module>
+    </modules>-->
+    <description>
+      Xerces2 provides high performance, fully compliant XML parsers in the Apache Xerces family. This new version of Xerces continues to build upon the Xerces Native Interface (XNI), a complete framework for building parser components and configurations that is extremely modular and easy to program.
+
+      The Apache Xerces2 parser is the reference implementation of XNI but other parser components, configurations, and parsers can be written using the Xerces Native Interface. For complete design and implementation documents, refer to the XNI Manual.
+
+      Xerces2 provides fully conforming XML Schema 1.0 and 1.1 processors. An experimental implementation of the "XML Schema Definition Language (XSD): Component Designators (SCD) Candidate Recommendation (January 2010)" is also provided for evaluation. For more information, refer to the XML Schema page.
+
+      Xerces2 also provides a complete implementation of the Document Object Model Level 3 Core and Load/Save W3C Recommendations and provides a complete implementation of the XML Inclusions (XInclude) W3C Recommendation. It also provides support for OASIS XML Catalogs v1.1.
+
+      Xerces2 is able to parse documents written according to the XML 1.1 Recommendation, except that it does not yet provide an option to enable normalization checking as described in section 2.13 of this specification. It also handles namespaces according to the XML Namespaces 1.1 Recommendation, and will correctly serialize XML 1.1 documents if the DOM level 3 load/save APIs are in use.  
+	</description>
+    <url>https://xerces.apache.org/xerces2-j/</url>
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://svn.apache.org/repos/asf/xerces/java/</url>
+        <connection>https://svn.apache.org/repos/asf/xerces/java/tags/Xerces-J_2_12_2/</connection>
+    </scm>    
+    <developers>
+        <developer>
+            <id>Xerces2-j</id>
+            <name>Apache Software Foundation</name>
+            <email>j-dev@xerces.apache.org</email>
+            <url>http://www.apache.org</url>
+            <organization>Apache Software Foundation</organization>
+            <organizationUrl>http://www.apache.org</organizationUrl>
+        </developer>
+    </developers>
+    <!-- Build Settings -->
+    <build>
+        <!-- <sourceDirectory>src</sourceDirectory> -->
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <!-- default configuration defined in the parent pom.xml -->
+                <!-- ignore generated Java sources as they still need the context of given XERCES-J Java classes and will not compile -->
+                <configuration>
+                    <excludes>
+                        <exclude>${project.basedir}/target/odf/generation/**/*.java</exclude>
+                    </excludes>
+                </configuration>
+            </plugin><!--
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <index>true</index>
+                        <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+                        <manifest>
+                            <mainClass>org.apache.xerces.JarManifest</mainClass>
+                        </manifest>
+                        <manifestEntries>
+                            <version>${project.version}</version>
+                        </manifestEntries>
+                        <!- see https://stackoverflow.com/questions/53049346/is-log4j2-compatible-with-java-11/57616897#57616897 ->
+                        <manifestEntries>
+                            <Multi-Release>true</Multi-Release>
+                        </manifestEntries>
+                        <manifestSections>
+                            <manifestSection>
+                                <name>XERCES-J</name>
+                                <manifestEntries>
+                                    <XERCES-J-Name>xerces</XERCES-J-Name>
+                                    <XERCES-J-Version>${project.version}</XERCES-J-Version>
+                                    <XERCES-J-Website>${project.url}</XERCES-J-Website>
+                                    <XERCES-J-Built-Date>${build.timestamp}</XERCES-J-Built-Date>
+                                    <XERCES-J-Supported-Xsd-Version>${supported-odf-version}</XERCES-J-Supported-Xsd-Version>
+                                </manifestEntries>
+                            </manifestSection>
+                        </manifestSections>
+                    </archive>
+                </configuration>
+            </plugin>
+             <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>5.1.9</version>
+                <executions>
+                    <execution>
+                        <id>bundle-manifest</id>
+                        <phase>process-classes</phase>
+                        <goals>
+                            <goal>manifest</goal>
+                        </goals>
+                        <configuration>
+                            <instructions>
+                                <Import-Package>
+                                    !org.odftoolkit.odfdom,
+                                    !org.odftoolkit.odfdom.*,
+                                    *
+                                </Import-Package>
+                            </instructions>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <systemPropertyVariables>
+                        <org.apache.xerces.validation>true</org.apache.xerces.validation>
+                        <!-- see https://cwiki.apache.org/confluence/display/MAVEN/Maven+Properties+Guide -->
+                        <org.apache.xerces.tests.dataDir>${project.basedir}/src/test/resources</org.apache.xerces.tests.dataDir>
+                        <user.language>en</user.language>
+                        <user.region>US</user.region>
+                    </systemPropertyVariables>
+                    <exclude>**/integrationtest/PerformanceIT.java</exclude><!--2DO-->
+                </configuration>
+            </plugin>
+                        <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <configuration>
+                    <!-- Workaround: Build the project using the same JDK version as the project is targetting.
+                         see https://issues.apache.org/jira/browse/MJAVADOC-562
+                         see https://bugs.openjdk.java.net/browse/JDK-8212233
+                    -->
+                    <source>${jdk.version}</source>
+                    <doctitle>Xerces-J v${project.version}</doctitle>
+                    <bottom>${javadoc.bottom}</bottom>
+                    <isOffline>false</isOffline>
+                    <!--
+                    <links>
+                        <link>https://xerces.apache.org/xerces-j/apiDocs/</link>
+                    </links>-->
+                    <splitindex>true</splitindex>
+                    <windowtitle>Xerces-J API v${project.version} - https://xerces.apache.org/xerces-j/</windowtitle>
+                    <!--
+                    <taglets>
+                        <taglet>
+                            <tagletClass>org.odftoolkit.odfdom.taglet.OdfElementTaglet</tagletClass>
+                        </taglet>
+                        <taglet>
+                            <tagletClass>org.odftoolkit.odfdom.taglet.OdfAttributeTaglet</tagletClass>
+                        </taglet>
+                        <taglet>
+                            <tagletClass>org.odftoolkit.odfdom.taglet.OdfDatatypeTaglet</tagletClass>
+                        </taglet>
+                    </taglets>
+                    <tagletArtifact>
+                        <groupId>${project.groupId}</groupId>
+                        <artifactId>taglets</artifactId>
+                        <version>${project.version}</version>
+                    </tagletArtifact>
+                    <docfilessubdirs>true</docfilessubdirs>^
+                         -->
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <configuration>
+                            <doclint>none</doclint>
+                            <!-- NullPointerException if not set!
+                                 <additionalOptions>
+                                 <additionalOption>${javadoc.opts}</additionalOption>
+                                 </additionalOptions>
+                            -->
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <index>true</index>
+                        <manifest>
+                            <mainClass>org.apache.xerces.JarManifest</mainClass>
+                        </manifest>
+                        <manifestEntries>
+                            <version>${project.version}</version>
+                        </manifestEntries>
+                        <manifestSections>
+                            <manifestSection>
+                                <name>XERCES-J</name>
+                                <manifestEntries>
+                                    <XERCES-J-Name>xerces</XERCES-J-Name>
+                                    <XERCES-J-Version>${project.version}</XERCES-J-Version>
+                                    <XERCES-J-Website>${project.url}</XERCES-J-Website>
+                                    <XERCES-J-Built-Date>${build.timestamp}</XERCES-J-Built-Date>
+                                    <XERCES-J-Supported-Xsd-Version>1.1</XERCES-J-Supported-Xsd-Version>
+                                </manifestEntries>
+                            </manifestSection>
+                        </manifestSections>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>single</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
