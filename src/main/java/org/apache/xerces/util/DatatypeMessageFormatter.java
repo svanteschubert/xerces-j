@@ -20,6 +20,7 @@ package org.apache.xerces.util;
 import java.util.Locale;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
+import static org.apache.xerces.impl.Constants.DEFAULT_LOCALE;
 
 /**
  * <p>Used to format JAXP 1.3 Datatype API error messages using a specified locale.</p>
@@ -51,7 +52,7 @@ public class DatatypeMessageFormatter {
         throws MissingResourceException {
 
         if (locale == null) {
-            locale = Locale.getDefault();
+            locale = DEFAULT_LOCALE;
         }
         final ResourceBundle resourceBundle = 
             ResourceBundle.getBundle(BASE_NAME, locale);

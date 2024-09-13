@@ -40,6 +40,7 @@ import org.apache.xerces.xni.parser.XMLDTDScanner;
 import org.apache.xerces.xni.parser.XMLDocumentScanner;
 import org.apache.xerces.xni.parser.XMLInputSource;
 import org.apache.xerces.xni.parser.XMLPullParserConfiguration;
+import static org.apache.xerces.impl.Constants.DEFAULT_LOCALE;
 
 /**
  * This is the non validating parser configuration. It extends the basic
@@ -355,7 +356,7 @@ public class NonValidatingConfiguration
 
         // set locale
         try {
-            setLocale(Locale.getDefault());
+            setLocale(DEFAULT_LOCALE);
         }
         catch (XNIException e) {
             // do nothing

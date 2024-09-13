@@ -21,6 +21,7 @@ import java.util.Locale;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 import java.util.Vector;
+import static org.apache.xerces.impl.Constants.DEFAULT_LOCALE;
 
 /**
  * A Regular Expression Parser.
@@ -82,7 +83,7 @@ class RegexParser {
     Vector references = null;
 
     public RegexParser() {
-        this.setLocale(Locale.getDefault());
+        this.setLocale(DEFAULT_LOCALE);
     }
     public RegexParser(Locale locale) {
         this.setLocale(locale);

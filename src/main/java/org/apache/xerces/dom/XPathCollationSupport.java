@@ -25,6 +25,7 @@ import java.util.Locale;
 import java.util.Map;
 
 import javax.xml.transform.TransformerException;
+import static org.apache.xerces.impl.Constants.DEFAULT_LOCALE;
 
 /**
  * This class provides, collation support for XalanJ's XPath 3.1 
@@ -62,7 +63,7 @@ public class XPathCollationSupport {
     
     private final String DEFAULT_UCA_FALLBACK_VALUE = UCA_FALLBACK_YES;
     
-    private final Locale DEFAULT_UCA_LOCALE = Locale.getDefault();     
+    private final Locale DEFAULT_UCA_LOCALE = DEFAULT_LOCALE;     
     
     private final String DEFAULT_UCA_STRENGTH_VALUE = UCA_STRENGTH_TERTIARY;
     

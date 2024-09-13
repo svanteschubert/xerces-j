@@ -51,6 +51,7 @@ import org.w3c.dom.DOMErrorHandler;
 import org.w3c.dom.DOMException;
 import org.w3c.dom.DOMStringList;
 import org.w3c.dom.ls.LSResourceResolver;
+import static org.apache.xerces.impl.Constants.DEFAULT_LOCALE;
 
 /**
  * Xerces implementation of DOMConfiguration that maintains a table of recognized parameters.
@@ -418,7 +419,7 @@ public class DOMConfigurationImpl extends ParserConfigurationSettings
 
         // set locale
         try {
-            setLocale(Locale.getDefault());
+            setLocale(DEFAULT_LOCALE);
         }
         catch (XNIException e) {
             // do nothing

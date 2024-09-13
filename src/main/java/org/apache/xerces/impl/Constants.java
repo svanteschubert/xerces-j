@@ -18,6 +18,7 @@
 package org.apache.xerces.impl;
 
 import java.util.Enumeration;
+import java.util.Locale;
 import java.util.NoSuchElementException;
 
 /**
@@ -34,6 +35,8 @@ public final class Constants {
     //
     // Constants
     //
+    // The default Locale one for all ussages
+    public static final Locale DEFAULT_LOCALE = Locale.getDefault();
     // Schema Types:
     public static final String NS_XMLSCHEMA = "http://www.w3.org/2001/XMLSchema".intern();
     public static final String NS_DTD = "http://www.w3.org/TR/REC-xml".intern();

@@ -20,6 +20,7 @@ package org.apache.xerces.dom;
 import java.util.Locale;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
+import static org.apache.xerces.impl.Constants.DEFAULT_LOCALE;
 
 /**
  * Used to format DOM error messages, using the system locale.
@@ -41,7 +42,7 @@ public class DOMMessageFormatter {
     private static Locale locale = null;
     
     DOMMessageFormatter() {
-        locale = Locale.getDefault();
+        locale = DEFAULT_LOCALE;
     }
     
     /**
@@ -125,7 +126,7 @@ public class DOMMessageFormatter {
     public static void init() {
         Locale _locale = locale;
         if (_locale == null) {
-            _locale = Locale.getDefault();
+            _locale = DEFAULT_LOCALE;
         }
         domResourceBundle = ResourceBundle.getBundle("org.apache.xerces.impl.msg.DOMMessages", _locale);
         serResourceBundle = ResourceBundle.getBundle("org.apache.xerces.impl.msg.XMLSerializerMessages", _locale);

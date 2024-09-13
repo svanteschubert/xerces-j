@@ -22,6 +22,7 @@ import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
 import org.apache.xerces.util.MessageFormatter;
+import static org.apache.xerces.impl.Constants.DEFAULT_LOCALE;
 
 /**
  * SchemaMessageProvider implements an XMLMessageProvider that
@@ -62,7 +63,7 @@ public class XSMessageFormatter implements MessageFormatter {
         throws MissingResourceException {
 
         if (locale == null) {
-            locale = Locale.getDefault();
+            locale = DEFAULT_LOCALE;
         }
         if (locale != fLocale) {
             fResourceBundle = ResourceBundle.getBundle("org.apache.xerces.impl.msg.XMLSchemaMessages", locale);

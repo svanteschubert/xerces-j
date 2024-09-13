@@ -23,6 +23,7 @@ import java.util.Stack;
 
 import org.apache.xerces.impl.Constants;
 import org.apache.xerces.util.IntStack;
+import static org.apache.xerces.impl.Constants.DEFAULT_LOCALE;
 
 /**
  * A regular expression matching engine using Non-deterministic Finite Automaton (NFA).
@@ -2288,7 +2289,7 @@ public class RegularExpression implements java.io.Serializable {
      *
      */
     public void setPattern(String newPattern) throws ParseException {
-        this.setPattern(newPattern, Locale.getDefault());
+        this.setPattern(newPattern, DEFAULT_LOCALE);
     }
     
     public void setPattern(String newPattern, Locale locale) throws ParseException {
@@ -2311,7 +2312,7 @@ public class RegularExpression implements java.io.Serializable {
      *
      */
     public void setPattern(String newPattern, String options) throws ParseException {
-        this.setPattern(newPattern, options, Locale.getDefault());
+        this.setPattern(newPattern, options, DEFAULT_LOCALE);
     }
     
     public void setPattern(String newPattern, String options, Locale locale) throws ParseException {

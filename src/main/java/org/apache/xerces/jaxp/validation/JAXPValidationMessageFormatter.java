@@ -20,6 +20,7 @@ package org.apache.xerces.jaxp.validation;
 import java.util.Locale;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
+import static org.apache.xerces.impl.Constants.DEFAULT_LOCALE;
 
 /**
  * <p>Used to format JAXP Validation API error messages using a specified locale.</p>
@@ -49,7 +50,7 @@ final class JAXPValidationMessageFormatter {
         throws MissingResourceException {
 
         if (locale == null) {
-            locale = Locale.getDefault();
+            locale = DEFAULT_LOCALE;
         }
         final ResourceBundle resourceBundle = 
             ResourceBundle.getBundle("org.apache.xerces.impl.msg.JAXPValidationMessages", locale);

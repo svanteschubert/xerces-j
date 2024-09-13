@@ -76,6 +76,7 @@ import org.w3c.dom.DOMStringList;
 import org.w3c.dom.ls.LSInput;
 import org.w3c.dom.ls.LSResourceResolver;
 import org.xml.sax.InputSource;
+import static org.apache.xerces.impl.Constants.DEFAULT_LOCALE;
 
 /**
  * This class implements xni.grammars.XMLGrammarLoader.
@@ -275,7 +276,7 @@ XSLoader, DOMConfiguration {
     private SchemaDVFactory fDefaultSchemaDVFactory;
     
     private WeakHashMap fJAXPCache;
-    private Locale fLocale = Locale.getDefault();
+    private Locale fLocale = DEFAULT_LOCALE;
     
     // XSLoader attributes
     private DOMStringList fRecognizedParameters = null;

@@ -34,6 +34,7 @@ import org.apache.xerces.xni.grammars.XMLGrammarPool;
 import org.apache.xerces.xni.parser.XMLEntityResolver;
 import org.apache.xerces.xni.parser.XMLErrorHandler;
 import org.apache.xerces.xni.parser.XMLInputSource;
+import static org.apache.xerces.impl.Constants.DEFAULT_LOCALE;
 
 /**
  * <p> This class provides an easy way for a user to preparse grammars
@@ -129,7 +130,7 @@ public class XMLGrammarPreparser {
 
         fLoaders = new Hashtable();
         fErrorReporter = new XMLErrorReporter();
-        setLocale(Locale.getDefault());
+        setLocale(DEFAULT_LOCALE);
         fEntityResolver = new XMLEntityManager();
         // those are all the basic properties...
     } // <init>(SymbolTable)

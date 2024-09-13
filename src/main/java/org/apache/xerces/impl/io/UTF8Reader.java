@@ -24,6 +24,7 @@ import java.util.Locale;
 
 import org.apache.xerces.impl.msg.XMLMessageFormatter;
 import org.apache.xerces.util.MessageFormatter;
+import static org.apache.xerces.impl.Constants.DEFAULT_LOCALE;
 
 /**
  * <p>A UTF-8 reader.</p>
@@ -83,7 +84,7 @@ public final class UTF8Reader
      * @param inputStream The input stream.
      */
     public UTF8Reader(InputStream inputStream) {
-        this(inputStream, DEFAULT_BUFFER_SIZE, new XMLMessageFormatter(), Locale.getDefault());
+        this(inputStream, DEFAULT_BUFFER_SIZE, new XMLMessageFormatter(), DEFAULT_LOCALE);
     } // <init>(InputStream, MessageFormatter)
 
     /**

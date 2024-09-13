@@ -62,6 +62,7 @@ import org.apache.xerces.xs.XSSimpleTypeDefinition;
 import org.apache.xerces.xs.XSTypeDefinition;
 import org.apache.xerces.xs.datatypes.ObjectList;
 import org.w3c.dom.TypeInfo;
+import static org.apache.xerces.impl.Constants.DEFAULT_LOCALE;
 
 /**
  * @xerces.internal
@@ -248,7 +249,7 @@ public class XSSimpleTypeDecl implements XSSimpleType, TypeInfo {
             return null;
         }
         public Locale getLocale() {
-            return Locale.getDefault();
+            return DEFAULT_LOCALE;
         }
         public TypeValidatorHelper getTypeValidatorHelper() {
             return TypeValidatorHelper.getInstance(Constants.SCHEMA_VERSION_1_0);
@@ -3277,7 +3278,7 @@ public class XSSimpleTypeDecl implements XSSimpleType, TypeInfo {
         }
         
         public Locale getLocale() {
-            return Locale.getDefault();
+            return DEFAULT_LOCALE;
         }
         
         public TypeValidatorHelper getTypeValidatorHelper() {

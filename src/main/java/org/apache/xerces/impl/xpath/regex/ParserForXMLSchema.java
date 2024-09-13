@@ -35,7 +35,7 @@ class ParserForXMLSchema extends RegexParser {
     private short xmlVersion = Constants.XML_VERSION_1_0;
 
     public ParserForXMLSchema() {
-        //this.setLocale(Locale.getDefault());
+        //this.setLocale(USER_LOCALE);
     }
     public ParserForXMLSchema(Locale locale) {
         super(locale);

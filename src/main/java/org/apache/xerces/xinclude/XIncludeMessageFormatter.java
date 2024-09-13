@@ -22,6 +22,7 @@ import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
 import org.apache.xerces.util.MessageFormatter;
+import static org.apache.xerces.impl.Constants.DEFAULT_LOCALE;
 
 // TODO: fix error messages in XIncludeMessages.properties
 /**
@@ -58,7 +59,7 @@ public class XIncludeMessageFormatter implements MessageFormatter {
         throws MissingResourceException {
 
         if (locale == null) {
-            locale = Locale.getDefault();
+            locale = DEFAULT_LOCALE;
         }
         if (locale != fLocale) {
             fResourceBundle = ResourceBundle.getBundle("org.apache.xerces.impl.msg.XIncludeMessages", locale);

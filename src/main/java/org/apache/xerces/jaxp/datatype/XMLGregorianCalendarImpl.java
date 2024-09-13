@@ -33,6 +33,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.namespace.QName;
 
 import org.apache.xerces.util.DatatypeMessageFormatter;
+import static org.apache.xerces.impl.Constants.DEFAULT_LOCALE;
 
 /** 
  * <p>Representation for W3C XML Schema 1.0 date/time datatypes.
@@ -2463,7 +2464,7 @@ class XMLGregorianCalendarImpl
      * manner.
      * <ul>
      *   <li>Using <code>timeZone</code> value as defined above, create a new 
-     * <code>java.util.GregorianCalendar(timeZone,Locale.getDefault())</code>.
+     * <code>java.util.GregorianCalendar(timeZone,USER_LOCALE)</code>.
      *   </li>
      *   <li>Initialize all GregorianCalendar fields by calling {(@link GegorianCalendar#clear()}.</li>
      *   <li>Obtain a pure Gregorian Calendar by invoking
@@ -2482,7 +2483,7 @@ class XMLGregorianCalendarImpl
         GregorianCalendar result = null;
         final int DEFAULT_TIMEZONE_OFFSET = DatatypeConstants.FIELD_UNDEFINED;
         TimeZone tz = getTimeZone(DEFAULT_TIMEZONE_OFFSET);
-        Locale locale = java.util.Locale.getDefault();
+        Locale locale = DEFAULT_LOCALE;
 
         result = new GregorianCalendar(tz, locale);
         result.clear();
@@ -2600,7 +2601,7 @@ class XMLGregorianCalendarImpl
             tz = getTimeZone(defaultZoneoffset);
         }
         if (aLocale == null) {
-            aLocale = java.util.Locale.getDefault();
+            aLocale = DEFAULT_LOCALE;
         }
         result = new GregorianCalendar(tz, aLocale);
         result.clear();

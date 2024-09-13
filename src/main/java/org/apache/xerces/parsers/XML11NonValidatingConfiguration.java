@@ -54,6 +54,7 @@ import org.apache.xerces.xni.parser.XMLEntityResolver;
 import org.apache.xerces.xni.parser.XMLErrorHandler;
 import org.apache.xerces.xni.parser.XMLInputSource;
 import org.apache.xerces.xni.parser.XMLPullParserConfiguration;
+import static org.apache.xerces.impl.Constants.DEFAULT_LOCALE;
 
 /**
  * This class is the non validating parser configuration 
@@ -413,7 +414,7 @@ public class XML11NonValidatingConfiguration extends ParserConfigurationSettings
 
         // set locale
         try {
-            setLocale(Locale.getDefault());
+            setLocale(DEFAULT_LOCALE);
         } catch (XNIException e) {
             // do nothing
             // REVISIT: What is the right thing to do? -Ac

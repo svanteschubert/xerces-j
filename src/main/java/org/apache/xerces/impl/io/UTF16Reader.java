@@ -24,6 +24,7 @@ import java.util.Locale;
 
 import org.apache.xerces.impl.msg.XMLMessageFormatter;
 import org.apache.xerces.util.MessageFormatter;
+import static org.apache.xerces.impl.Constants.DEFAULT_LOCALE;
 
 /**
  * <p>A UTF-16 reader. Can also be used for UCS-2 (i.e. ISO-10646-UCS-2).</p>
@@ -76,7 +77,7 @@ public final class UTF16Reader
      */
     public UTF16Reader(InputStream inputStream, boolean isBigEndian) {
         this(inputStream, DEFAULT_BUFFER_SIZE, isBigEndian, 
-                new XMLMessageFormatter(), Locale.getDefault());
+                new XMLMessageFormatter(), DEFAULT_LOCALE);
     } // <init>(InputStream, boolean)
     
     /** 
