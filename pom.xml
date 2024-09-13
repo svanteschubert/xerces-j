@@ -36,10 +36,10 @@
         <javadoc.bottom>Copyright © {inceptionYear}–2024 Apache Software Foundation; Copyright © 2018–{currentYear} {organizationName}. All rights reserved.</javadoc.bottom>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- JDK versions should be the same --> 
-        <jdk.version>11</jdk.version>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-        <maven.compiler.release>11</maven.compiler.release><!-- see https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-release.html -->
+        <jdk.version>8</jdk.version>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <maven.compiler.release>8</maven.compiler.release><!-- see https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-release.html -->
         <!-- ANT driven release bundle creation: 3 ZIPs for the complete Toolkit for binaries, documentation and sources -->
         <release.dir>${basedir}/target/release</release.dir>
         <release.dir.bin>${release.dir}/${project.version}/binaries</release.dir.bin>
@@ -75,14 +75,14 @@
                 <artifactId>xml-resolver</artifactId>
                 <version>1.2</version>
                 <optional>true</optional>
-            </dependency><!--
+            </dependency>
             <dependency>
                 <groupId>org.eclipse.wst.xml.xpath2</groupId>
                 <artifactId>processor</artifactId>
                 <version>1.2.1</version>
                 <scope>system</scope>
                 <systemPath>${project.basedir}/tools/org.eclipse.wst.xml.xpath2.processor_1.2.1.jar</systemPath>
-            </dependency>-->
+            </dependency>
             <!-- https://mvnrepository.com/artifact/org.eclipse.wst.xml.xpath2/processor 
             <dependency>
                 <groupId>org.eclipse.wst.xml.xpath2</groupId>
@@ -91,13 +91,12 @@
                 <scope>system</scope>
                 <systemPath>${project.basedir}/tools/org.eclipse.wst.xml.xpath2.processor_2.1.100.jar</systemPath>
             </dependency>-->
-            <!-- https://mvnrepository.com/artifact/com.rackspace.eclipse.webtools.sourceediting/org.eclipse.wst.xml.xpath2.processor -->
+            <!-- https://mvnrepository.com/artifact/com.rackspace.eclipse.webtools.sourceediting/org.eclipse.wst.xml.xpath2.processor 
             <dependency>
                 <groupId>com.rackspace.eclipse.webtools.sourceediting</groupId>
                 <artifactId>org.eclipse.wst.xml.xpath2.processor</artifactId>
                 <version>2.1.100</version>
-            </dependency>
-            <!--
+            </dependency>-->
             <dependency>
                 <groupId>edu.princeton.cup</groupId>
                 <artifactId>java-cup</artifactId>
@@ -111,7 +110,7 @@
                 <version>4711</version>
                 <scope>system</scope>
                 <systemPath>${project.basedir}/tools/icu4j.jar</systemPath>
-            </dependency>-->
+            </dependency>
             <!-- https://mvnrepository.com/artifact/junit/junit -->
             <dependency>
                 <groupId>junit</groupId>
